@@ -9,14 +9,11 @@ import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
-const Input = ({ name, icon: Icon, ...rest }) => {
-  const inputRef = useRef(null);
-
+export function Input({ name, icon: Icon, ...rest }: any) {
+  const inputRef = useRef<any>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-
   const { fieldName, defaultValue, registerField } = useField(name);
-
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
   }, []);
@@ -49,5 +46,3 @@ const Input = ({ name, icon: Icon, ...rest }) => {
     </Container>
   );
 };
-
-export default Input;
